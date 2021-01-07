@@ -2,7 +2,7 @@
 
 Desafio Backend Compasso Uol - vivo
 
-Desafio para novos desenvolvedores.
+Desafio para novos desenvolvedores, linguagem utilizada para a solução: Java 8.
 
 Desenvolvido uma API Rest com Spring Boot.
 
