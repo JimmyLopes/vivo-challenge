@@ -29,13 +29,14 @@ public class QuestaoUmServiceImpl {
         int colunas = Math.abs(scanner.nextInt());
 
         Matriz matriz = new Matriz(linhas, colunas);
-        //Exibe a matriz gerada aleatoriamente
+        //Exibe a matriz gerada com valores aleatorios
         matriz.lerMatriz();
 
         System.out.println("Entre com os valores inteiros do vetor de [" + colunas + "] posições, os valores devem estar entre 0 e 15:");
         int[] vetor = new int[colunas];
         for (int i = 0; i < colunas; i++) {
             int valueInput = Math.abs(scanner.nextInt());
+            //Verifica se o valor inputado está entre os valores válidos, se não volta uma interação no laço e pede o número novamente
             if (valueInput < 0 || valueInput > 15) {
                 i--;
                 System.out.println("O Valor inputado não corresponde a um valor válido. Entre com um novo valor válido.");
@@ -46,12 +47,17 @@ public class QuestaoUmServiceImpl {
 
     exibeVetor(vetor);
 
-    Map<Integer, Integer> integerIntegerHashMap = procurarElementosDoVetorNaMatriz(matriz, vetor);
+    Map<Integer, Integer> map = procurarElementosDoVetorNaMatriz(matriz, vetor);
 
-    exibeRecorrencias(integerIntegerHashMap);
+    exibeRecorrencias(map);
 
 }
 
+    /**
+     * Método que exibe a recorrência dos valores no vetor na matriz
+     *
+     * @param recorrenciaElementos Map com os valores bases
+     */
     private static void exibeRecorrencias(Map<Integer, Integer> recorrenciaElementos) {
         pularLinha();
         System.out.println("Recorrência dos elementos do vetor na matriz:");
@@ -60,6 +66,13 @@ public class QuestaoUmServiceImpl {
         }
     }
 
+    /**
+     * Método que procura os elementos do vetor dentro da matriz e armazena os valores dentro de um map
+     *
+     * @param matriz a matriz base
+     * @param vetor o vetor contendo os valores a serem procurados
+     * @return o map de chave e valor, contendo o valor procurado e quantidade de vezes que foi encontrado
+     */
     private static Map<Integer, Integer> procurarElementosDoVetorNaMatriz(Matriz matriz, int[] vetor) {
         //HashMap com o valor procurado e a qntdade de ocorrencias
         Map<Integer, Integer> recorrencia = new HashMap<>();
@@ -70,6 +83,11 @@ public class QuestaoUmServiceImpl {
         return recorrencia;
     }
 
+    /**
+     * Método que exibe o vetor inputado no console
+     *
+     * @param vetor o vetor a ser exibido
+     */
     public static void exibeVetor(int[] vetor) {
         pularLinha();
         System.out.println("Vetor [" + vetor.length + "] inputado:");
@@ -78,6 +96,9 @@ public class QuestaoUmServiceImpl {
         }
     }
 
+    /**
+     * Método que salta uma linha no console
+     */
     private static void pularLinha() {
         System.out.println();
     }
