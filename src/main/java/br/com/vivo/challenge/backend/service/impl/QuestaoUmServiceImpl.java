@@ -1,8 +1,8 @@
 package br.com.vivo.challenge.backend.service.impl;
 
 import br.com.vivo.challenge.backend.domain.Matriz;
+import br.com.vivo.challenge.backend.utils.MatrizUtils;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -45,13 +45,13 @@ public class QuestaoUmServiceImpl {
             }
         }
 
-    exibeVetor(vetor);
+        exibeVetor(vetor);
 
-    Map<Integer, Integer> map = procurarElementosDoVetorNaMatriz(matriz, vetor);
+        //Procura os elementos do vetor dentro da matriz e armazena os valores dentro de um map
+        Map<Integer, Integer> map = MatrizUtils.procurarRecorrencia(matriz, vetor);
 
-    exibeRecorrencias(map);
-
-}
+        exibeRecorrencias(map);
+    }
 
     /**
      * Método que exibe a recorrência dos valores no vetor na matriz
@@ -64,23 +64,6 @@ public class QuestaoUmServiceImpl {
         for (Map.Entry<Integer, Integer> entry : recorrenciaElementos.entrySet()) {
             System.out.println("O elemento [" + entry.getKey() + "] se repete na matriz por [" + entry.getValue() + "] vez(es).");
         }
-    }
-
-    /**
-     * Método que procura os elementos do vetor dentro da matriz e armazena os valores dentro de um map
-     *
-     * @param matriz a matriz base
-     * @param vetor o vetor contendo os valores a serem procurados
-     * @return o map de chave e valor, contendo o valor procurado e quantidade de vezes que foi encontrado
-     */
-    private static Map<Integer, Integer> procurarElementosDoVetorNaMatriz(Matriz matriz, int[] vetor) {
-        //HashMap com o valor procurado e a qntdade de ocorrencias
-        Map<Integer, Integer> recorrencia = new HashMap<>();
-        for (int i : vetor) {
-            int qntdRepeticoes = matriz.findElement(i);
-            recorrencia.put(i, qntdRepeticoes);
-        }
-        return recorrencia;
     }
 
     /**
