@@ -225,7 +225,7 @@ public class VivoChallengeApplication implements CommandLineRunner {
 		v3Gato.setInicioVolta(DateUtils.getLocalDateTimeFromString("2021-01-09 23:53:39.660"));
 		v3Gato.setFimVolta(DateUtils.getLocalDateTimeFromString("2021-01-09 23:54:57.757"));
 
-		papalegua.setVoltasHeroi(Arrays.asList(v1Gato, v2Gato, v3Gato));
+		gato.setVoltasHeroi(Arrays.asList(v1Gato, v2Gato, v3Gato));
 
 		heroiRepository.saveAll(Arrays.asList(superman, flash, mercurio, sonic, papalegua, gato));
 	}
