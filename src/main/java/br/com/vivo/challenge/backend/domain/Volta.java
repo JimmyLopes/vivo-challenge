@@ -23,7 +23,9 @@ public class Volta {
     public Volta() {
     }
 
-    public Volta(Integer numeroVolta, LocalDateTime inicioVolta, LocalDateTime fimVolta, Double velocidadeVolta) {
+
+    public Volta(String idVolta, Integer numeroVolta, LocalDateTime inicioVolta, LocalDateTime fimVolta, Double velocidadeVolta) {
+        this.idVolta = idVolta;
         this.numeroVolta = numeroVolta;
         this.inicioVolta = inicioVolta;
         this.fimVolta = fimVolta;
