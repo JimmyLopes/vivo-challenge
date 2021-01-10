@@ -2,10 +2,26 @@ package br.com.vivo.challenge.backend.dto;
 
 public class HeroiRetornoDto {
 
+    private Integer posicao;
     private String codigoSuperHeroi;
     private String nomeSuperHeroi;
-    private String qntdVoltas;
-    private String tempoTotalProva;
+    private Integer qntdVoltas;
+    private Double tempoTotalProva;
+
+    public HeroiRetornoDto(String codigoSuperHeroi, String nomeSuperHeroi, Integer qntdVoltas, Double tempoTotalProva) {
+        this.codigoSuperHeroi = codigoSuperHeroi;
+        this.nomeSuperHeroi = nomeSuperHeroi;
+        this.qntdVoltas = qntdVoltas;
+        this.tempoTotalProva = tempoTotalProva;
+    }
+
+    public Integer getPosicao() {
+        return posicao;
+    }
+
+    public void setPosicao(Integer posicao) {
+        this.posicao = posicao;
+    }
 
     public String getCodigoSuperHeroi() {
         return codigoSuperHeroi;
@@ -23,19 +39,19 @@ public class HeroiRetornoDto {
         this.nomeSuperHeroi = nomeSuperHeroi;
     }
 
-    public String getQntdVoltas() {
+    public Integer getQntdVoltas() {
         return qntdVoltas;
     }
 
-    public void setQntdVoltas(String qntdVoltas) {
+    public void setQntdVoltas(Integer qntdVoltas) {
         this.qntdVoltas = qntdVoltas;
     }
 
-    public String getTempoTotalProva() {
+    public Double getTempoTotalProva() {
         return tempoTotalProva;
     }
 
-    public void setTempoTotalProva(String tempoTotalProva) {
+    public void setTempoTotalProva(Double tempoTotalProva) {
         this.tempoTotalProva = tempoTotalProva;
     }
 }
