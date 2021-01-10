@@ -216,14 +216,14 @@ public class VivoChallengeApplication implements CommandLineRunner {
 		v2Gato.setNumeroVolta(2);
 		v2Gato.setVelocidadeVolta(28.435);
 		v2Gato.setInicioVolta(DateUtils.getLocalDateTimeFromString("2021-01-09 23:52:01.796"));
-		v2Gato.setFimVolta(DateUtils.getLocalDateTimeFromString("2021-01-09 23:50:37.987"));
+		v2Gato.setFimVolta(DateUtils.getLocalDateTimeFromString("2021-01-09 23:53:39.660"));
 
 		Volta v3Gato = new Volta();
 		v3Gato.setIdVolta("23");
 		v3Gato.setNumeroVolta(3);
 		v3Gato.setVelocidadeVolta(35.633);
-		v3Gato.setInicioVolta(DateUtils.getLocalDateTimeFromString("2021-01-09 23:50:37.987"));
-		v3Gato.setFimVolta(DateUtils.getLocalDateTimeFromString("2021-01-09 23:53:39.660"));
+		v3Gato.setInicioVolta(DateUtils.getLocalDateTimeFromString("2021-01-09 23:53:39.660"));
+		v3Gato.setFimVolta(DateUtils.getLocalDateTimeFromString("2021-01-09 23:54:57.757"));
 
 		papalegua.setVoltasHeroi(Arrays.asList(v1Gato, v2Gato, v3Gato));
 
