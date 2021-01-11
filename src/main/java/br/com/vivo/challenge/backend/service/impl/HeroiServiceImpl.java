@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
@@ -118,6 +120,32 @@ public class HeroiServiceImpl implements HeroiService {
     }
 
     /**
+     * Método que define qual foi a velocidade média do Herói durante a corrida
+     *
+     * @param codigoHeroi o código do herói procurado
+     * @return a velocidade média do herói
+     */
+    @Override
+    public VelocidadeMediaHeroiDto definirVelocidadeMedia(String codigoHeroi) {
+        Heroi heroi = buscarHeroi(codigoHeroi);
+
+        VelocidadeMediaHeroiDto velocidadeMediaHeroiDto = new VelocidadeMediaHeroiDto();
+        velocidadeMediaHeroiDto.setNomeHeroi(heroi.getNome());
+        velocidadeMediaHeroiDto.setCodigoHeroi(heroi.getCodigo());
+        if (heroi.getVoltasHeroi().isEmpty()){
+            throw new BusinessException(StringUtils.buscarMensagemDeValidacao("heroi.voltas.vazio", "velocidade média"));
+        }
+        velocidadeMediaHeroiDto.setVelocidadeMediaCorrida(obterVelocidadeMedia(heroi.getVoltasHeroi()));
+
+        return velocidadeMediaHeroiDto;
+    }
+
+    private Double obterVelocidadeMedia(List<Volta> voltasHeroi) {
+        double somaVelocidades = voltasHeroi.stream().mapToDouble(Volta::getVelocidadeVolta).sum();
+        return BigDecimal.valueOf(somaVelocidades/voltasHeroi.size()).setScale(3, RoundingMode.HALF_UP).doubleValue();
+    }
+
+    /**
      * Método responsável por buscar todos heróis cadastrados
      *
      * @return a lista com os heróis
@@ -134,6 +162,10 @@ public class HeroiServiceImpl implements HeroiService {
      */
     @SuppressWarnings("java:S1871")
     private MelhorVoltaHeroiDto obterMelhorVolta(Heroi heroi) {
+        if (heroi.getVoltasHeroi().isEmpty()){
+            throw new BusinessException(StringUtils.buscarMensagemDeValidacao("heroi.voltas.vazio", "melhor volta"));
+        }
+
         MelhorVoltaHeroiDto bestLap = new MelhorVoltaHeroiDto();
         Map<Volta, Double> mapTempoXVolta = new HashMap<>();
 

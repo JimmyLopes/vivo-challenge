@@ -3,6 +3,7 @@ package br.com.vivo.challenge.backend.resource;
 import br.com.vivo.challenge.backend.dto.ClassificacaoDto;
 import br.com.vivo.challenge.backend.dto.MelhorVoltaCorridaDto;
 import br.com.vivo.challenge.backend.dto.MelhorVoltaHeroiDto;
+import br.com.vivo.challenge.backend.dto.VelocidadeMediaHeroiDto;
 import br.com.vivo.challenge.backend.service.HeroiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,4 +38,8 @@ public class HeroiLeituraResource {
         return ResponseEntity.ok(heroiService.buscarMelhorVoltaCorrida());
     }
 
+    @GetMapping("{codigoHeroi}/velocidade-media")
+    public ResponseEntity<VelocidadeMediaHeroiDto> definirVelocidadeMediaHeroi(@PathVariable String codigoHeroi) {
+        return ResponseEntity.ok(heroiService.definirVelocidadeMedia(codigoHeroi));
+    }
 }
