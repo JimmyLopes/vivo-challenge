@@ -7,6 +7,10 @@ public class HeroiRetornoCorridaIncompletaDto {
     private Integer qntdVoltas;
     private Double tempoParcialProva;
 
+    // Construtor Utilizado nos testes
+    public HeroiRetornoCorridaIncompletaDto() {
+    }
+
     public HeroiRetornoCorridaIncompletaDto(String codigoSuperHeroi, String nomeSuperHeroi, Integer qntdVoltas, Double tempoParcialProva) {
         this.posicao = "Corrida incompleta";
         this.codigoSuperHeroi = codigoSuperHeroi;

@@ -266,8 +266,7 @@ public class HeroiServiceImpl implements HeroiService {
             } else {
                 return null;
             }
-        })
-                .filter(Objects::nonNull)
+        }).filter(Objects::nonNull)
                 .collect(Collectors.toList());
         heroisRetorno.removeAll(heroisNaoFinalistas);
 

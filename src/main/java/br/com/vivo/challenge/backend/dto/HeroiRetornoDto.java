@@ -8,6 +8,10 @@ public class HeroiRetornoDto {
     private Integer qntdVoltas;
     private Double tempoTotalProva;
 
+    //Construtor utilizado nos testes
+    public HeroiRetornoDto() {
+    }
+
     public HeroiRetornoDto(String codigoSuperHeroi, String nomeSuperHeroi, Integer qntdVoltas, Double tempoTotalProva) {
         this.codigoSuperHeroi = codigoSuperHeroi;
         this.nomeSuperHeroi = nomeSuperHeroi;
