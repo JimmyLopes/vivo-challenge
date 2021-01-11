@@ -13,6 +13,10 @@ public class RecorrenciaDto {
     private String vetorEntrada;
     private List<String> recorrencias;
 
+    // Construtor utilizado nos testes
+    public RecorrenciaDto() {
+    }
+
     public RecorrenciaDto(Map<Integer, Integer> mapRecorrencias, Matriz matriz, int[] vetor) {
         this.matrizGerada = gerarMatriz(matriz);
         this.vetorEntrada = gerarVetor(vetor);

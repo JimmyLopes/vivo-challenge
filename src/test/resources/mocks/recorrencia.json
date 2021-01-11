@@ -1,0 +1,15 @@
+{
+  "matrizGerada": [],
+  "vetorEntrada": "[1, 2, 3, 4, 5, 6, 7, 8, 9]",
+  "recorrencias": [
+    "O elemento [1] se repete na matriz por [0] vez(es).",
+    "O elemento [2] se repete na matriz por [0] vez(es).",
+    "O elemento [3] se repete na matriz por [0] vez(es).",
+    "O elemento [4] se repete na matriz por [0] vez(es).",
+    "O elemento [5] se repete na matriz por [0] vez(es).",
+    "O elemento [6] se repete na matriz por [0] vez(es).",
+    "O elemento [7] se repete na matriz por [0] vez(es).",
+    "O elemento [8] se repete na matriz por [0] vez(es).",
+    "O elemento [9] se repete na matriz por [0] vez(es)."
+  ]
+}

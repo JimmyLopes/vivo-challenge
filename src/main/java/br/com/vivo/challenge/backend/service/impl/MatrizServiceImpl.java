@@ -16,6 +16,7 @@ import java.util.Random;
 public class MatrizServiceImpl implements MatrizService {
 
     public static final int MAX_VALUE_FOR_VECTOR_ELEMENT = 15;
+    public static final int MIN_VALUE_FOR_VECTOR_ELEMENT = 0;
 
     @Override
     public RecorrenciaDto procurarRecorrencia(VetorEntradaDto vetorEntradaDto) {
@@ -42,8 +43,8 @@ public class MatrizServiceImpl implements MatrizService {
             throw new BusinessException(StringUtils.buscarMensagemDeValidacao("vetor.vazio"));
         }
         vetorEntradaDto.getValoresVetor().forEach(integer -> {
-            if (integer < 0 || integer > 15){
-                throw new BusinessException(StringUtils.buscarMensagemDeValidacao("vetor.range.invalido", MAX_VALUE_FOR_VECTOR_ELEMENT));
+            if (integer < MIN_VALUE_FOR_VECTOR_ELEMENT || integer > MAX_VALUE_FOR_VECTOR_ELEMENT){
+                throw new BusinessException(StringUtils.buscarMensagemDeValidacao("vetor.range.invalido", MIN_VALUE_FOR_VECTOR_ELEMENT, MAX_VALUE_FOR_VECTOR_ELEMENT));
             }
         });
     }
