@@ -24,7 +24,7 @@ public class HeroiLeituraResource {
 
     @GetMapping("/classificacao")
     public ResponseEntity<ClassificacaoDto> buscarClassificacao() {
-        return ResponseEntity.ok(heroiService.buscarTodos());
+        return ResponseEntity.ok(heroiService.classificarCorrida());
     }
 
     @GetMapping("{codigoHeroi}/best-lap")

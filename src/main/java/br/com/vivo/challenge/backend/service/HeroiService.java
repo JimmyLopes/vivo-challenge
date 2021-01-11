@@ -11,7 +11,7 @@ import javax.validation.Valid;
 public interface HeroiService {
     Heroi salvarHeroi(@Valid NovoHeroiDto novoHeroiDto);
 
-    ClassificacaoDto buscarTodos();
+    ClassificacaoDto classificarCorrida();
 
     MelhorVoltaHeroiDto buscarMelhorVoltaHeroi(String codigoHeroi);
 
